@@ -1,0 +1,22 @@
+{
+  "name": "restfull-node",
+  "version": "1.0.0",
+  "description": "API RESTFULL NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristianoDaSilvaFerreira/restfull-node.git"
+  },
+  "author": "Cristiano Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristianoDaSilvaFerreira/restfull-node/issues"
+  },
+  "homepage": "https://github.com/CristianoDaSilvaFerreira/restfull-node#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

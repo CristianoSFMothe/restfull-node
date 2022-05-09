@@ -16,3 +16,10 @@ npm install express --save
 npm install nodemon -g
 ```
  
+ # Persistência de Dados com NeDB
+
+ ```bash
+ npm install nedb --save
+ ```
+
+ 

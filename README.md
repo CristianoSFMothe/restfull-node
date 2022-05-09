@@ -1,23 +1,47 @@
 # RESTful API de Usuários
 
-[![Hcode Treinamentos](https://www.hcode.com.br/res/img/hcode-200x100.png)](https://www.hcode.com.br)
+## Instalação
 
-API desenvolvida em Node.js para o Curso Completo de JavaScript na Udemy.com.
-
-### Instalação
-```
+```bash
 npm install
 ```
 
-### Excutando servidor
+### Inicialização
+```bash
+npm init
 ```
+
+## Dependências
+
+```bash
+# Nodemon
+npm install nodemon -g
+
+# Express
+npm install express -g
+
+# Consign
+npm install consign --save
+
+# Body-Parser
+npm install body-parser --save
+
+# NeDB
+npm install nedb --save
+```
+
+### Excutando servidor
+
+```bash
 npm start
 ```
+
 ## Rotas
 Obter todos os usuários:
-```
+```bash
 GET /users
 ```
+
 Exemplo de resultado:
 ```json
 {
@@ -29,6 +53,7 @@ Cadastrar um novo usuário:
 ```
 POST /users
 ```
+
 Exemplo de resultado:
 ```json
 {
@@ -38,9 +63,10 @@ Exemplo de resultado:
 ```
 
 Obter dados de um usuário:
-```
+```bash
 GET /users/:id
 ```
+
 Exemplo de resultado:
 ```json
 {
@@ -53,6 +79,7 @@ Editar um usuário:
 ```
 PUT /users/:id
 ```
+
 Exemplo de resultado:
 ```json
 {
@@ -64,6 +91,7 @@ Excluir um usuário:
 ```
 DELETE /users/:id
 ```
+
 Exemplo de resultado:
 ```json
 {

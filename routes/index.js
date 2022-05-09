@@ -1,8 +1,11 @@
 module.exports = (app) => {
-    app.get('/', (req, 
-        res) => {
-        res.started = 200;
+
+    app.get('/', (req, res) => {
+
+        res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
-        res.end('<h1>Hello, world!</h1>');
+        res.end('<h1>Hello World!!</h1>');
+
     });
+
 };

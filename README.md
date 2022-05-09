@@ -1,25 +1,72 @@
-# restfull-node
+# RESTful API de Usuários
 
-## Iniciando 
+[![Hcode Treinamentos](https://www.hcode.com.br/res/img/hcode-200x100.png)](https://www.hcode.com.br)
 
-```bash
-node init
+API desenvolvida em Node.js para o Curso Completo de JavaScript na Udemy.com.
+
+### Instalação
 ```
-* Instando o Express
-
-```bash
-npm install express --save
+npm install
 ```
-* Instalando Nodemon
 
-```bash
-npm install nodemon -g
+### Excutando servidor
 ```
- 
- # Persistência de Dados com NeDB
+npm start
+```
+## Rotas
+Obter todos os usuários:
+```
+GET /users
+```
+Exemplo de resultado:
+```json
+{
+    "users":[]
+}
+```
 
- ```bash
- npm install nedb --save
- ```
+Cadastrar um novo usuário:
+```
+POST /users
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324",
+    "name":"João Rangel"
+}
+```
 
- 
+Obter dados de um usuário:
+```
+GET /users/:id
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324",
+    "name":"João Rangel"
+}
+```
+
+Editar um usuário:
+```
+PUT /users/:id
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324"
+}
+```
+
+Excluir um usuário:
+```
+DELETE /users/:id
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324"
+}
+```

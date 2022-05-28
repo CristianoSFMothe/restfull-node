@@ -28,6 +28,10 @@ npm install body-parser --save
 
 # NeDB
 npm install nedb --save
+
+# Express Validator
+npm install express-validator --save
+
 ```
 
 ### Excutando servidor

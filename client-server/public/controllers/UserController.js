@@ -39,7 +39,7 @@ class UserController {
 
       // Método que recupera o conteúdo da imagem, criar uma cópia dela e sobrescreve os 
       // conteúdos da direita pelo o da esquerda
-      let result = Object.assign({}, userOld, values);    
+      let result = Object.assign({}, userOld, values);
 
       this.showPanelCreate();
 
@@ -52,13 +52,13 @@ class UserController {
             result._photo = content;
           }
           let user = new User();
-          
+
           user.loadFromJSON(result);
-          
+
           user.save();
 
           this.getTr(user, tr);
-    
+
           this.updateCount();
 
           this.formUpdateEl.reset();
@@ -197,23 +197,46 @@ class UserController {
   // Método para selecioar todos os usuários
   selectAll() {
 
-    let users = User.getUsersStorage();
+    //let users = User.getUsersStorage();
 
-    users.forEach(dataUser => {
+    let ajax = new XMLHttpRequest();
 
-      let user = new User();
+    ajax.open('GET', '/users');
 
-      user.loadFromJSON(dataUser);
+    ajax.onload = event => {
 
-      this.addLine(user);
+      let obj = { users: [] };
 
-    });
+      try {
+
+        obj = JSON.parse(event.responseText);
+
+      } catch (e) {
+
+        console.error(e);
+
+      }
+
+      obj.users.forEach(dataUser => {
+
+        let user = new User();
+
+        user.loadFromJSON(dataUser);
+
+        this.addLine(user);
+
+
+
+      });
+    };
+
+    ajax.send();
   } // Fecha selectAll()  
 
   // Método de adicionar a tabela dos dados do usuário
   addLine(dataUser) {
 
-    let tr = this.getTr(dataUser);                   
+    let tr = this.getTr(dataUser);
 
     this.tableEl.appendChild(tr);
 
@@ -228,7 +251,7 @@ class UserController {
     tr.dataset.user = JSON.stringify(dataUser);
 
     tr.innerHTML =
-    `
+      `
     <td>
       <img src="${dataUser.photo}" alt="User Image" class="img-circle img-sm">
     </td>
@@ -248,9 +271,9 @@ class UserController {
   } // Fechar getTr()
 
   // Método do addEventsTr
-  addEventsTr(tr) { 
+  addEventsTr(tr) {
 
-    tr.querySelector('.btn-delete').addEventListener('click', e =>{
+    tr.querySelector('.btn-delete').addEventListener('click', e => {
 
       if (confirm('Deseja realmente excluir?')) {
 

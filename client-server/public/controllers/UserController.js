@@ -197,8 +197,6 @@ class UserController {
   // Método para selecioar todos os usuários
   selectAll() {
 
-    //let users = User.getUsersStorage();
-
     let ajax = new XMLHttpRequest();
 
     ajax.open('GET', '/users');
@@ -225,11 +223,10 @@ class UserController {
 
         this.addLine(user);
 
-
-
       });
-    };
 
+    };
+    
     ajax.send();
   } // Fecha selectAll()  
 

@@ -70,3 +70,9 @@ Exemplo de resultado:
     "_id":"hjkhfui324"
 }
 ```
+
+## Executar os serviços
+
+Entrar na pasta **client-server** e usar o comando `npm start` para execulta o servidor local
+
+Entrar na pasta **REST API** e usar o comando `node index` para execulta o servidor
